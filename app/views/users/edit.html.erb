@@ -1,0 +1,28 @@
+<%= render "logs/header" %>
+<div class="edit-acount">
+<%= form_with(model: current_user, local: true) do |form| %>
+
+  <div class="edit-acount-name">
+    <%= form.label :name, "名前：" %>
+    <%= form.text_field :name, class: "edit-acount-form" %>
+  </div>
+
+  <p class="avatar-text">現在のプロフィール写真</p>
+  <% if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar, size: "120x120", class: "edit-avatar-image" %>
+  <% else %>
+    <p class="center">設定無し</p>
+  <% end %>
+
+  <div class="edit-acount-avatar">
+    <%= form.label :avatar, "プロフィール写真：", class: "avatar-label" do %>写真を変更
+      <%= form.file_field :avatar, class: "hidden edit-avatar" %>
+    <% end %>
+  </div>
+
+  <div class="edit-acount-submit-btm">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+</div>

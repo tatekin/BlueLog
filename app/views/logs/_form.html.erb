@@ -1,0 +1,108 @@
+<div class="form">
+<%= form_with(model: log, local: true) do |form| %>
+  <% if log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
+      <ul>
+      <% log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-row">
+    <div class="form-group col-5">
+      <%= form.label :place, "場所：" %>
+      <%= form.text_field :place %>
+    </div>
+
+    <div class="form-group col-6">
+      <%= form.label :date, "日付：" %>
+      <%= form.date_select :date %>
+    </div>
+
+    <div class="form-group col-12 top-space">
+      <%= form.label :point, "ポイント名：" %>
+      <%= form.text_field :point %>
+    </div>
+  </div>
+
+  <div class="form-group top-space">
+    <%= form.label :member, "メンバー" %>
+    <%= form.text_area :member, class: "form-control", id: "inputAddress2", placeholder: "" %>
+  </div>
+
+  <div class="form-row mt-5">
+    <div class="form-group col-4">
+      <%= form.label :En, "En :" %>
+      <%= form.time_select :En %>
+    </div>
+
+    <div class="form-group col-4">
+      <%= form.label :Max, "Max :" %>
+      <%= form.text_field :Max %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-4">
+      <%= form.label :Ex, "Ex :" %>
+      <%= form.time_select :Ex %>
+    </div>
+    <div class="form-group col-4">
+      <%= form.label :Ave, "Ave :" %>
+      <%= form.text_field :Ave %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="orm-group col">
+      <%= form.label :Dt, "Dt :" %>
+      <%= form.number_field :Dt %>
+    </div>
+
+    <div class="orm-group col">
+      <%= form.label :Cl, "Cl :" %>
+      <%= form.number_field :Cl %>
+    </div>
+
+    <div class="orm-group col">
+      <%= form.label :Temp, "水温 :" %>
+      <%= form.text_field :Temp %>
+    </div>
+  </div>
+
+  <div class="form-row">
+  </div>
+
+
+  <div class="form-group mt-5">
+    <%= form.label :fish, "見た魚" %>
+    <%= form.text_area :fish, class: "form-control", id: "inputAddress2", placeholder: "" %>
+  </div>
+
+  <div class="field mt-5">
+    <%= form.label :images, "写真を追加：" %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <% if log.images.attached? %>
+    <div class="image-flex">
+      <% num = 0 %>
+      <% log.images.each do |image| %>
+        <% num += 1 %>
+        <div class="left-space images">
+          <%= image_tag image, class: "image top-space", size: "100x100" %>
+          <%= form.label :"image_ids_#{image.id}", class: "btn-circle-flat" do %>x
+            <%= form.check_box :image_ids, {multiple: true, class: "hidden"}, image.id, false %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="actions mt-5">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

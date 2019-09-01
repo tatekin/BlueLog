@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:change_time] = "%H:%M"

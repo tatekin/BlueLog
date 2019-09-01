@@ -1,0 +1,42 @@
+<div class="my-4 d-flex justify-content-center">
+  <div class="card" style="width: 50%;">
+    <div class="card-body">
+      <div class="row">
+        <%= link_to "#{log.user.name}", user_path(log.user), class: "user-name" %>
+        <% if log.user.avatar.attached? %>
+          <%= image_tag log.user.avatar, size: "40x40", class: "avatar" %>
+        <% end %>
+        <h6 class="card-subtitle mb-2 text-muted ml-auto mr-4"><%= log.date.strftime("%m/%d") %></h6>
+      </div>
+      <div class="row bottom-space">
+        <h5 class="card-title m-auto font-weight-bold"><%= log.place %></h5>
+      </div>
+      <p class="card-text">ポイント名：<%= log.point %></p>
+      <p class="mt-3">メンバー：<%= log.member %></p>
+      <div class="row">
+        <p class="col-4">En : <%= log.En.strftime("%H：%M") %></p>
+        <p class="col-4">Max : <%= log.Max %> m</p>
+      </div>
+      <div class="row">
+        <p class="col-4">Ex : <%= log.Ex.strftime("%H：%M") %></p>
+        <p class="col-4">Ave : <%= log.Ave %> m</p>
+      </div>
+      <div class="row">
+        <p class="col">Dt : <%= log.Dt %> 分</p>
+        <p class="col">Cl : <%= log.Cl %> m</p>
+        <p class="col">水温：<%= log.Temp %> ℃</p>
+      </div>
+      <p class="mt-3">見た魚：<%= log.fish %></p>
+      <% if log.images.attached? %>
+        <p class="mt-3">写真</p>
+        <% log.images.each do |image| %>
+          <%= image_tag image, class: "image", size: "105x105" %>
+        <% end %>
+      <% end %>
+      <% if user_signed_in? && current_user.id == log.user_id %>
+        <%= link_to '削除', log, class: "btn btn-primary float-right ml-2", id: "delete-btn", method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+        <%= link_to '編集', edit_log_path(log), class: "btn btn-primary float-right", id: "edit-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<%= render 'logs/header' %>
+<%= render partial: "logs/log", collection: @logs, as: "log" %>
+<div class="float-right mr-4">
+  <%= paginate(@logs) %>
+</div>

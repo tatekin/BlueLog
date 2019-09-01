@@ -1,0 +1,201 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ @import "bootstrap";
+ 
+.sign_up{
+position: absolute;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 0px;
+margin: auto;
+width: 200px;
+height: 500px;
+}
+
+body {
+  background-color: #CCFFFF;
+}
+
+.user-name{
+  padding-top: 6px;
+  margin-left: 15px;
+}
+
+.avatar{
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.header-text{
+  font-size: 25px;
+}
+
+.form{
+  width: 700px;
+  margin: 60px auto;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: red;
+  color: #FFF;
+  width: 20px;
+  height: 20px;
+  line-height: 17px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  right: 0;
+  cursor: pointer;
+}
+
+.image-flex{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+}
+
+.flex{
+  display: flex;
+}
+
+.a{
+  position: absolute;
+  top: 0;
+  z-index: 123;
+}
+
+.image{
+  margin-bottom: 5px;
+  position: relative;
+}
+
+#delete-btn{
+  margin-top: 65px;
+}
+
+#edit-btn{
+  margin-top: 65px;
+}
+
+.form-title{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.top-space{
+  margin-top: 20px;
+}
+
+.right-space{
+  padding-right: 40px;
+}
+
+.avatar-text{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.bottom-space{
+  margin-bottom: 40px;
+}
+
+.left-space{
+  margin-left: 5px;
+}
+
+.right{
+  float: right;
+}
+
+.images{
+  position: relative;
+}
+
+.hidden{
+  display: none;
+}
+
+.edit-acount-name{
+  font-size: 30px;
+  margin-top: 115px;
+  text-align: center;
+}
+
+.edit-acount-avatar{
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.edit-acount-submit-btm{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.edit-acount-form{
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.center{
+  text-align: center;
+}
+
+.edit-avatar-image{
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.avatar-label{
+  cursor: pointer;
+  background-color: rgb(216, 216, 216) ;
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+  border: solid 1px rgb(186, 186, 186);
+  border-radius: 10px;
+}
+
+.sign-in{
+  margin: 0 auto;
+}
+
+.fish-book{
+  margin: auto 0;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.header-left-space{
+  padding-left: 127px;
+}
+
+#error_explanation{
+  text-align: center;
+}
+
+.style-none{
+  list-style: none;
+}
