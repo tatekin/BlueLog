@@ -73,3 +73,4 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'mechanize'
+gem 'aws-sdk-s3', require: false
