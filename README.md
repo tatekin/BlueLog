@@ -1,24 +1,49 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# BlueLog
 
-Things you may want to cover:
+スキューバダイビングの記録をつけるアプリです。
 
-* Ruby version
+## 簡単な説明
 
-* System dependencies
+ダイビングをした後には必ずログ（記録）をつけます。  
+ログをデータ化して、Webで管理したいという思いからこのアプリを作りました。
 
-* Configuration
 
-* Database creation
+## 使い方
 
-* Database initialization
+下記URLにアクセスし、テスト用アカウントでログインします。  
+ログの作成や、好きなユーザーのログを閲覧できます。
 
-* How to run the test suite
+- 接続先情報  
+URL https://bluelog2.herokuapp.com/
+- テスト用アカウント  
+メールアドレス: manbow@jkjk.com  
+パスワード: manbow42
 
-* Services (job queues, cache servers, search engines, etc.)
+Chromeの最新版を利用してアクセスしてください  
+ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続ください  
+接続先およびログイン情報については、上記の通りです。  
+同時に複数の方がログインしている場合に、ログインできない可能性がございます。  
+確認後、ログアウト処理をお願いします
 
-* Deployment instructions
 
-* ...
+## 機能
+
+- ユーザー登録・ログイン機能
+- ユーザー編集機能
+- ユーザー詳細ページ
+- ログ一覧機能
+- ログ投稿機能
+- ログ編集機能
+- ログ削除機能
+- 画像投稿機能
+
+## 開発環境
+
+- Ruby (2.5.1)
+- Rails (5.2.3)
+- JavaScript
+- jQuery
+- PostgreSQL
+- Heroku
+- AWS S3
