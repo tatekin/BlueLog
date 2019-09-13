@@ -54,3 +54,40 @@ Chromeの最新版を利用してアクセスしてください。
 - PostgreSQL
 - Heroku
 - AWS S3
+
+
+# DB設計
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :logs, dependent: :destroy
+- has_one_attached :avatar, dependent: :destroy
+
+## logsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|place|string||
+|date|date||
+|point|string||
+|member|text||
+|user|references|foreign_key: true|
+|En|time||
+|Ex|time||
+|Dt|integer||
+|Max|float||
+|Ave|float||
+|Cl|integer||
+|Temp|float||
+|fish|text||
+|image|text||
+
+### Association
+- belongs_to :user
+- has_many_attached :images
