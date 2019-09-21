@@ -36,42 +36,11 @@ ActiveRecord::Schema.define(version: 2019_08_29_062224) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "fish", force: :cascade do |t|
-    t.string "fish_name"
-    t.bigint "log_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["log_id"], name: "index_fish_on_log_id"
-  end
-
-  create_table "fish_logs", force: :cascade do |t|
-    t.bigint "log_id"
-    t.bigint "fish_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["fish_id"], name: "index_fish_logs_on_fish_id"
-    t.index ["log_id"], name: "index_fish_logs_on_log_id"
-  end
-
-  create_table "fish_names", force: :cascade do |t|
-    t.string "name"
-    t.text "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.text "image"
-    t.bigint "log_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["log_id"], name: "index_images_on_log_id"
-  end
-
   create_table "logs", force: :cascade do |t|
     t.string "place"
     t.date "date"
     t.string "point"
+    t.bigint "user_id"
     t.time "En"
     t.time "Ex"
     t.integer "Dt"
@@ -83,17 +52,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_062224) do
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.text "member"
-  end
-
-  create_table "logs_users", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "log_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["log_id"], name: "index_logs_users_on_log_id"
-    t.index ["user_id"], name: "index_logs_users_on_user_id"
+    t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,10 +70,5 @@ ActiveRecord::Schema.define(version: 2019_08_29_062224) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "fish", "logs"
-  add_foreign_key "fish_logs", "fish"
-  add_foreign_key "fish_logs", "logs"
-  add_foreign_key "images", "logs"
-  add_foreign_key "logs_users", "logs"
-  add_foreign_key "logs_users", "users"
+  add_foreign_key "logs", "users"
 end
