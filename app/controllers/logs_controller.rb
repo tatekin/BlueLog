@@ -21,6 +21,7 @@ class LogsController < ApplicationController
   end
 
   def update
+    #削除ボタンを押された写真のidを取ってきて、一つずつ削除する。
     unless params[:log][:image_ids].nil?
       params[:log][:image_ids].each do |image_id|
         image = @log.images.find(image_id)

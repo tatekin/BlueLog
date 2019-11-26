@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container text-white">
-    <a class="navbar-brand text-white" href="/">BlueLog</a>
+    <a class="navbar-brand text-white" id="bluelog" href="/">BlueLog</a>
     <% if user_signed_in? %>
       <% if current_page?(root_path) %>
         <p class="my-auto mx-auto header-text header-left-space"><%= current_user.name%>さん こんにちは</p>
